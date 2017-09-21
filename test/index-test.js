@@ -24,13 +24,14 @@ describe('index', () => {
       increaseRankBy(3)
 
       const rankedLists = document.querySelectorAll('.ranked-list')
-      const firstList = rankedLists[0]
+      const firstList = rankedLists[0]  //第一个ul
       const secondList = rankedLists[1]
 
-      let children = firstList.children
+      let children = firstList.children //li列表
       let start = 1
       for (let i = 0, l = children.length; i < l; i++) {
         expect(parseInt(children[i].innerHTML)).toEqual(start + i + 3)
+        // 每个li 转成整型数字 == 1 + i+3. 4 5
       }
 
       children = secondList.children
@@ -38,6 +39,7 @@ describe('index', () => {
 
       for (let i = 0, l = children.length; i < l; i++) {
         expect(parseInt(children[i].innerHTML)).toEqual(start - i + 3)
+        // 1 - i + 3. 15 14 13
       }
     })
   })
