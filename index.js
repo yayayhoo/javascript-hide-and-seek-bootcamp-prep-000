@@ -9,16 +9,22 @@ function nestedTarget() {
 }
 
 function deepestChild() {
-  return
+  var tree = document.querySelector('#grand-node');
+  // var t
+  var data = tree.childNodes[1];
+  while (data.childNodes != undefined){
+    data = data.childNodes[1];
+  }
+
+  return data.innerText;
 }
 
 function increaseRankBy(n) {
   var list = document.querySelectorAll('.ranked-list');
-  let li1 = list[0];
-  let li2 = list[1];
+
   for (let i = 0; i < list.length; i++) {
-    for (let j = 0; j < list[i].length; j++) {
-      list[i][j].innerHTML = parseInt(list[i][j].innerHTML) + 3;
+    for (let j = 0; j < list[i].children.length; j++) {
+      list[i].children[j].innerHTML = parseInt(list[i].children[j].innerHTML) + 3;
     }
   }
 }
