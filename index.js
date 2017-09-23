@@ -12,11 +12,11 @@ function deepestChild() {
   var tree = document.querySelector('#grand-node');
   // var t
   var data = tree.childNodes[1];
-  while (data.childNodes != undefined){
+  while (data.childNodes[1] != undefined){
     data = data.childNodes[1];
   }
 
-  return data.innerText;
+  return data;
 }
 
 function increaseRankBy(n) {
